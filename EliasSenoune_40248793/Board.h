@@ -24,7 +24,7 @@ public:
 	void checkWin2();
 
 private:
-	void switchPlayer();
+	void takeTurn();
 	void save();
 	Player p1;
 	Player p2;

@@ -192,7 +192,7 @@ bool Board::isFlippable(int row, int col) {
 	return false;
 }
 
-void Board::switchPlayer() {
+void Board::takeTurn() {
 	if (p1 == curr) {
 		this->curr = p2;
 	}
@@ -248,7 +248,7 @@ Board::Board(std::string save_file) {
 
 }
 void Board::concede() {
-	switchPlayer();
+	takeTurn();
 	std::cout << "You've conceded. " << "GG! " << curr.getName() << "(" << curr.getColor() << ") won the game! " << std::endl;
 	exit(0);
 }
@@ -301,7 +301,7 @@ void Board::checkWin() {
 //If both players have no legal moves count the amount of piece for each player and display a message accordingly.
 void Board::checkWin2() {
 	if (findGoodMove().empty()) {
-		switchPlayer();
+		takeTurn();
 		if (findGoodMove().empty()) {
 			int whiteCount = 0, blackCount = 0, emptyCount = 0;
 			for (int i = 0; i < SIZE; i++) {
@@ -317,7 +317,7 @@ void Board::checkWin2() {
 			else std::cout << "A game of othello when played perfectly alway end in a tie. GG to" << p1.getName() << " (" << p1.getColor() << ") and " << p2.getName() << " (" << p2.getColor() << ")" << " game ended in a tie" << std::endl;
 			exit(0);
 		}
-		switchPlayer();
+		takeTurn();
 	}
 }
 void Board::play() {
@@ -398,7 +398,7 @@ void Board::play() {
 				break;
 			}
 		}
-		switchPlayer();
+		takeTurn();
 		drawBoard();
 		checkWin();
 	}

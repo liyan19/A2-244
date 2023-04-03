@@ -160,7 +160,7 @@ void Board::flipPiece(int row, int col) {
 
 }
 //check if the position can flip pieces. Return true if a move flips other pieces. Returns false otherwise
-bool Board::isFlippable(int row, int col) {
+bool Board::isPlacable(int row, int col) {
 	//char otherPlayer = (curr.getColor() == Position::BLACK) ? Position::WHITE : Position::BLACK;
 	char otherPlayer;
 	if (curr.getColor() == Position::BLACK) otherPlayer = Position::WHITE;
@@ -263,7 +263,7 @@ std::vector<std::vector<int>> Board::findGoodMove() {
 	for (int i = 0; i < SIZE; i++) {
 		for (int j = 0; j < SIZE; j++) {
 			if (board[i][j].getPiece() == Position::EMPTY) {
-				if (isFlippable(i, j)) {
+				if (isPlacable(i, j)) {
 
 					std::vector<int> move = { i,j };
 					goodMoveList.push_back(move);

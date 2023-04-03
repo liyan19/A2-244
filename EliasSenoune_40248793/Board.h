@@ -18,7 +18,7 @@ public:
 	Board(std::string file_name);
 	void flipPiece(int row, int col);
 	std::vector<std::vector<int>> findGoodMove();
-	bool isFlippable(int row, int col);
+	bool isPlacable(int row, int col);
 	void concede();
 	void checkWin();
 	void checkWin2();

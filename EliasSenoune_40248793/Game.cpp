@@ -35,6 +35,7 @@ Game::Game(Player p1, Player p2) {
 
 
 }
+//start menu
 void Game::start() {
 
 	std::string name;

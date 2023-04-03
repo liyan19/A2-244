@@ -1,0 +1,4 @@
+W a
+B s
+W a
+.B.B.BBB.BBBWB..WWWBWWW..WWBW..*.BBBW..*....BWB.......B.......B.
